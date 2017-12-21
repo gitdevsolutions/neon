@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Neon</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            background-color: black;
+            display: flex;
+        }
+
+        button {
+            position: absolute;
+            left: 5%;
+            top: 5%;
+        }
+
+        ul {
+            margin: auto;
+        }
+
+        li {
+            color: yellowgreen;
+            display: inline-block;
+            font-size: 60px;
+            font-family: 'Monda', sans-serif;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-shadow: 0 0 25px white, 0 0 10px yellow;
+            transition: opacity 0,55s;
+        }
+
+        li:nth-child(3) {
+            transform: rotate(20deg)translateY(4px);
+            animation: neon 2s 1s infinite linear;
+        }
+        .off {
+            opacity: 0;
+        }
+
+        @keyframes neon {
+            0% {
+                opacity: 0;
+                transform: scale(1)
+            }
+            100% {
+                opacity: 1;
+                transform: scale(2)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>WYŁĄCZ</button>
+    <ul>
+        <li>D</li>
+        <li>E</li>
+        <li>V</li>
+        <li>S</li>
+        <li>O</li>
+        <li>L</li>
+        <li>U</li>
+        <li>T</li>
+        <li>I</li>
+        <li>O</li>
+        <li>N</li>
+        <li>S</li>
+        <li>.</li>
+        <li>P</li>
+        <li>L</li>
+    </ul>
+    <script>
+        var button = document.querySelector("button");
+        button.addEventListener("click", function () {
+            if (this.textContent == "WŁĄCZ"){
+                this.textContent = "WYŁĄCZ";
+                
+            }
+            else{
+                this.textContent = "WŁĄCZ";
+            }
+            const letters = document.querySelectorAll("li");
+            for(var i =0;letters.length>i;i++){
+                letters[i].classList.toggle("off");
+            }
+            
+        })
+    </script>
+</body>
+
+</html>
